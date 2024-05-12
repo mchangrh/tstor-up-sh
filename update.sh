@@ -15,7 +15,7 @@ function has_update() {
         download_url=$(echo "$api_response" | jq -r '.latest.download_url')
         echo "Downloading $download_url"
         wget -q -O /tmp/dl.zip "$download_url"
-        unzip -y -q /tmp/dl.zip -d "$SEARCHDIR/$plugin_namespace-$plugin_name-$latest_version"
+        unzip -o -q /tmp/dl.zip -d "$SEARCHDIR/$plugin_namespace-$plugin_name-$latest_version"
         # cleanup
         rm /tmp/dl.zip
         rm -rf "$SEARCHDIR/$plugin_namespace-$plugin_name-$plugin_version"
