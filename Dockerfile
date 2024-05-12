@@ -6,5 +6,5 @@ RUN apk update && \
         wget \
         jq \
         unzip
-COPY update.sh /update.sh
+COPY --chmod=0755 update.sh /update.sh
 CMD ["/update.sh"]
