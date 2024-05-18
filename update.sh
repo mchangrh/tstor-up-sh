@@ -27,6 +27,7 @@ function main() {
     for plugin_name in ${plugin_arr}; do
         # parse plugin name
         IFS='-' read -ra plugin_vars <<< "$plugin_name"
+        echo "Checking for updates for ${plugin_vars[*]}"
         has_update "${plugin_vars[@]}"
     done
 }
